@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ProductCard from '../components/ProductCard';
+import { getProducts } from '../services/products';
 
 function Home() {
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    getProducts()
+      .then((data) => setProduct(data));
+  }, []);
+
   return (
     <div>
-      <h1>Home</h1>
+      <ProductCard product={product} />
     </div>
   );
 }

@@ -9,7 +9,8 @@ header{
 
   & h1{
     color:darkgoldenrod;
-    font-size:2.5em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:2.7em;
     font-weight: bold;
   }
 
@@ -22,8 +23,8 @@ header{
 
     & a {
       font-size: 1.5em;
-      text-transform: uppercase;
       transition:all .5s;
+      text-decoration: none;
       &:visited{
         color:white;
       }
