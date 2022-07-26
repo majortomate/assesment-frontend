@@ -24,7 +24,7 @@ function ProductCard(props) {
               </div>
               <h1 className="product__title">{item.title}</h1>
               <div className="product__footer">
-                <span className="product__time">{random}</span>
+                <span className="product__time">{item.rating.count}</span>
                 <Link to={`products/${item.id}`} className={time ? 'product__btn disable-clic' : 'product__btn'}>Go to detail</Link>
               </div>
             </article>
