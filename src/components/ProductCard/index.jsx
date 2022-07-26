@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
 function ProductCard(props) {
   // eslint-disable-next-line react/prop-types
   const { products } = props;
+  const [time, setTime] = useState(false);
+  const random = Math.floor((Math.random() * 100)) * 100;
+
+  setTimeout(() => {
+    setTime(true);
+  }, random);
+
   return (
     <div className="products__container">
       {
@@ -17,8 +24,8 @@ function ProductCard(props) {
               </div>
               <h1 className="product__title">{item.title}</h1>
               <div className="product__footer">
-                <span className="product__time">Product time</span>
-                <Link to={`products/${item.id}`} className="product__btn">Go to detail</Link>
+                <span className="product__time">{random}</span>
+                <Link to={`products/${item.id}`} className={time ? 'product__btn disable-clic' : 'product__btn'}>Go to detail</Link>
               </div>
             </article>
           )
