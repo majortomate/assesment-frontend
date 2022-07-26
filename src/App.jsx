@@ -6,6 +6,7 @@ import ProductDetail from './pages/ProductDetail';
 import About from './pages/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import './normalize.css';
 
 function App() {
   return (

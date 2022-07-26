@@ -1,10 +1,11 @@
 import React from 'react';
+import './styles.scss';
 
 function Footer() {
   return (
-    <div>
-      <h1>Footer</h1>
-    </div>
+    <footer>
+      <span>Copyright © 2022 Mr.Shop. All rights reserved. Built by Majortomate</span>
+    </footer>
   );
 }
 
