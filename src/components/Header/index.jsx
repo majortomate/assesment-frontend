@@ -5,7 +5,7 @@ import './styles.scss';
 function Header() {
   return (
     <header>
-      <h1> Mr.Shop </h1>
+      <Link to="/" className="logo">Mr. Shop</Link>
       <ul className="header-container">
         <li>
           <Link to="/">Home</Link>

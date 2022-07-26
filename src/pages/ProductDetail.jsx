@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProduct } from '../services/products';
+import './styles.scss';
+import rating from '../services/rating';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -12,7 +14,7 @@ function ProductDetail() {
   }, []);
 
   return (
-    <div>
+    <div className="product-detail__container">
       {
        product.id === Number(id)
          ? (
@@ -20,16 +22,20 @@ function ProductDetail() {
              <div className="product-detail__image">
                <img src={product.image} alt={product.title} />
              </div>
-             <h1 className="product-detail__title">{product.title}</h1>
-             <div className="product-detail__footer">
+             <div className="product-detail__info">
+               <h1 className="product-detail__title">{product.title}</h1>
                <span className="product-detail__price">
                  $
                  {' '}
                  {product.price}
                </span>
-               <p className="product-detail__category">{product.category}</p>
-               <p className="product-detail__price">{product.description}</p>
-               <span className="product-detail_rating">{product.rating.rate}</span>
+               <span className="product-detail__category">{product.category}</span>
+               <p className="product-detail__description">{product.description}</p>
+               <span className="product-detail_rating">
+                 {product.rating.rate}
+                 {' / '}
+                 {rating(Math.round(product.rating.rate))}
+               </span>
              </div>
            </article>
          )
