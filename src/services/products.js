@@ -6,3 +6,9 @@ export async function getProducts() {
   const json = await response.json();
   return json;
 }
+
+export async function getProduct(id) {
+  const response = await fetch(`${BASE_URL}products/${id}`);
+  const json = await response.json();
+  return json;
+}

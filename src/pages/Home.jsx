@@ -3,16 +3,16 @@ import ProductCard from '../components/ProductCard';
 import { getProducts } from '../services/products';
 
 function Home() {
-  const [product, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getProducts()
-      .then((data) => setProduct(data));
+      .then((data) => setProducts(data));
   }, []);
 
   return (
     <div>
-      <ProductCard product={product} />
+      <ProductCard products={products} />
     </div>
   );
 }
