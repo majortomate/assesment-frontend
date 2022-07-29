@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from '../components/ProductCard';
+import ProductList from '../components/ProductList';
 import { getProducts } from '../services/products';
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
 
   return (
     <div>
-      <ProductCard products={products} />
+      <ProductList products={products} />
     </div>
   );
 }

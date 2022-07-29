@@ -24,17 +24,10 @@ function ProductDetail() {
              </div>
              <div className="product-detail__info">
                <h1 className="product-detail__title">{product.title}</h1>
-               <span className="product-detail__price">
-                 $
-                 {' '}
-                 {product.price}
-               </span>
+               <span className="product-detail__price">$ {product.price} </span>
                <span className="product-detail__category">{product.category}</span>
                <p className="product-detail__description">{product.description}</p>
-               <span className="product-detail_rating">
-                 {product.rating.rate}
-                 {' / '}
-                 {rating(Math.round(product.rating.rate))}
+               <span className="product-detail_rating">{product.rating.rate} / {rating(Math.round(product.rating.rate))}
                </span>
              </div>
            </article>

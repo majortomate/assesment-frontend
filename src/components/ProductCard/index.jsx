@@ -1,38 +1,28 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import { randomNumber, setNumbers } from '../../services/randomNumber';
 
-function ProductCard(props) {
-  // eslint-disable-next-line react/prop-types
-  const { products } = props;
-  const [time, setTime] = useState(false);
-  const random = Math.floor((Math.random() * 100)) * 100;
+function ProductCard({ item }) {
+  const [counter, setCounter] = useState(randomNumber);
 
-  setTimeout(() => {
-    setTime(true);
-  }, random);
+  useEffect(() => {
+    const timer = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+    return () => clearInterval(timer);
+  }, [counter]);
 
   return (
-    <div className="products__container">
-      {
-        // eslint-disable-next-line react/prop-types
-        products.map((item) => (item
-          ? (
-            <article className="product" key={item.id}>
-              <div className="product__image">
-                <img src={item.image} alt={item.title} />
-              </div>
-              <h1 className="product__title">{item.title}</h1>
-              <div className="product__footer">
-                <span className="product__time">{item.rating.count}</span>
-                <Link to={`products/${item.id}`} className={time ? 'product__btn disable-clic' : 'product__btn'}>Go to detail</Link>
-              </div>
-            </article>
-          )
-          : null))
-      }
-    </div>
-
+    <article className="product" key={item.id}>
+      <div className="product__image">
+        <img src={item.image} alt={item.title} />
+      </div>
+      <h1 className="product__title">{item.title}</h1>
+      <div className="product__footer">
+        <span className="product__time">{setNumbers(counter)}</span>
+        <Link to={`products/${item.id}`} className={!counter ? 'product__btn disable-clic' : 'product__btn'}>Go to detail</Link>
+      </div>
+    </article>
   );
 }
 

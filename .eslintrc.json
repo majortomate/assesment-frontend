@@ -18,6 +18,7 @@
         "react"
     ],
     "rules": {
-      "quotes": ["error", "single"]
+      "react/jsx-one-expression-per-line": "off",
+      "react/react-in-jsx-scope": "off"
     }
 }
