@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
@@ -25,5 +24,11 @@ function ProductCard({ item }) {
     </article>
   );
 }
+ProductCard.defaultProps = {
+  item: [],
+};
+ProductCard.propTypes = {
+  item: [],
+};
 
 export default ProductCard;

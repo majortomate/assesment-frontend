@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable max-len */
 import React from 'react';
 
 function About() {
@@ -10,9 +7,9 @@ function About() {
       <section className="about-me__container">
         <img src="https://avatars.githubusercontent.com/u/56098988?v=4" alt="avatar" />
         <div className="about-me__info">
-          <h2>Hi, I'm Carlos Beltrán Ruiloba</h2>
-          <p>I am a budding web developer with more than 4 years of experience as a Webmaster, working with Wordpress and its entire suite.</p>
-          <h3>Here's 3 things I've learned at MakeItReal:</h3>
+          <h2>Hi, I`m Carlos Beltrán Ruiloba</h2>
+          <p>I am a budding web dev with more than 4 years of experience as a Webmaster, working with Wordpress and its entire suite.</p>
+          <h3>Here`s 3 things I`ve learned at MakeItReal:</h3>
           <ul>
             <li>React Components</li>
             <li>React useState, useEffect</li>
