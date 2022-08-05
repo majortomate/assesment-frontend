@@ -17,7 +17,7 @@ function ProductDetail() {
     <div className="product-detail__container">
       {
        product.id === Number(id)
-         ? (
+         && (
            <article className="product-detail" key={product.id}>
              <div className="product-detail__image">
                <img src={product.image} alt={product.title} />
@@ -32,7 +32,6 @@ function ProductDetail() {
              </div>
            </article>
          )
-         : null
       }
     </div>
   );
